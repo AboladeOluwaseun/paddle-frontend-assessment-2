@@ -16,7 +16,7 @@ const GithubPages = () => {
         setgithubrepos(data.items);
       });
   }, []);
-
+  console.log(githubrepos);
   const displayRepos = githubrepos.map((repo) => {
     return (
       <RepoCard
@@ -26,6 +26,7 @@ const GithubPages = () => {
         stars={repo.stargazers_count}
         issues={repo.issues_url}
         timeinterval={repo.owner.id}
+        key={repo.id}
       ></RepoCard>
     );
   });
